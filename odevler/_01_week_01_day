@@ -1,0 +1,35 @@
+AI : Bilgisayarların normalde insan zekası gerektiren bazı işleri yapmasını sağlayan teknolojilerin genel adıdır. görüntü tanıma, ses anlama ve karar verme gibi işlemlerdir.
+ML : Yapay zekanın bir alt alanıdır. Bilgisayara bütün kuralları tek tek öğretmek yerine verilerden öğrenmesini ve öğrendiği bilgilere göre yeni veriler hakkında tahmin yapmasını sağlar.
+DL : Makine öğrenmesinin bir alt alanıdır. yapay sinir ağlarını bulundurur ve görüntü, ses ve dil gibi daha karmaşık verilerle çalışırken kullanılır.
+LLM (büyük dil modeli): Büyük miktarda metin ile eğitilen ve insan dilini anlayıp yorumlamaya ve yeni metinler oluşturmaya çalışan model türüdür. ChatGPT gibi chat sistemlerinde LLM teknolojisinden yararlanılır.
+Aralarındaki ilişki: AI en genel kavramdır. ML, AI'ın bir alt alanıdır ve DL de ML'in bir alt alanıdır. LLM ise özellikle dil ve metinlerle çalışmak için kullanılan büyük modellerdir.
+2. Günlük Hayattan AI veya ML Kullanılan Örnekler
+1. YouTube veya Spotify gibi uygulamalar daha önce yaptığımız seçimlere bakarak kullanıcıya uygun içerikleri önermeye çalışır.
+2. E-posta uygulamaları gelen mesajlarda spam olup olmadığını tahmin eder ve ayırır.
+3. Telefonlardaki yüz tanıma sistemi yüzümüzü analiz edip telefonu kullanan kişinin kayıtlı kişi olup olmadığını anlamaya çalışır.
+4. Google haritalar gibi uygulamalar yol bilgileri kullanarak gideceğimiz yere ulaşmak için uygun bir rota bulmamıza yardımcı olur.
+5. Siri gibi sistemler söylediğimiz kelimeleri anlamaya çalışarak sorularımıza cevap verir veya verdiğimiz komutları gerçekleştirir.
+3. Öğrenme Türlerini Karşılaştırma
+Supervised Learning (denetimli öğrenme): Bilgisayara hem sorunun kendisini hem de doğru cevabı vererek öğretme yöntemidir. örneğin E-postaların spam veya spam değil olarak etiketlenmiş verilerle filtrelere öğretilmesi.
+Unsupervised Learning (denetimsiz öğrenme): Bilgisayara sadece veriler verilir, ortada doğru cevap yoktur; model verilerdeki benzerlikleri kendi kendine gruplar.alışveriş sitelerinin müşterilerini alışveriş alışkanlıklarına göre benzer gruplara ayırması.
+Reinforcement Learning (Pekiştirmeli Öğrenme): Modelin yaptığı hareketlerin sonucunda ödül veya ceza alarak deneme yanılma yoluyla öğrenmesidir. Örneğin bir bilgisayarın bir oyunda doğru hareketler yaptığında puan kazanarak zamanla daha iyi oynamayı öğrenmesi buna örnektir.
+4. Classification mı, Regression mı?
+Classification: Bir verinin kategorisini tahmin etme işlemidir. Sonuç genellikle bir sınıf veya kategori olur.
+Regression: Sayısal tahmin etme işlemidir. Örneğin fiyat, puan veya sıcaklık gibi bir sayı tahmin edilebilir.
+Classification örnekleri: E-posta spam tespiti ve müşteri terk eder/etmez tahmini.
+Regression örnekleri: Ev fiyatı tahmini ve sınav puanı tahmini.
+Kısaca, sonuç bir kategori ise Classification, sonuç bir sayı ise Regression diyebiliriz.
+5. Feature ve Label
+Feature: modelin tahminde kullandığı özelliktir.  Yani modele verdiğimiz bilgilerden biridir.
+Label: Modelin tahmin etmeye çalıştığı doğru sonuçtur.
+“Ders çalışma saati → sınavı geçti/geçmedi” örneği: Burada ders çalışma saati Feature, öğrencinin sınavı geçip geçmediği ise Label olur. Model önceki öğrencilerin çalışma sonuçlarına bakarak yeni bir öğrencinin sonucunu tahmin etmeye çalışır.
+6. Training ve Inference
+Training (Eğitim): Modelin geçmiş verileri kullanarak öğrenmeye çalıştığı aşamadır. Örneğin öğrencilerin çalışma saatleri ve sınav sonuçları modele verilerek bu bilgiler arasındaki ilişkiyi öğrenmesi aşamasıdır.
+Inference (Tahmin): Eğitilmiş modelin öğrendiği bilgileri kullanarak daha önce görmediği yeni veri hakkında tahmin yapmasıdır. Örneğin yeni bir öğrencinin çalışma saati modele verildiğinde, model öğrencinin sınavda başarılı olup olmayacağını tahmin ederse bu Inference aşamasıdır.
+7. Python AI Araçları
+NumPy: Python’da sayısal işlemler yapmak için kullanılan bir kütüphanedir.
+Pandas: Verileri düzenlemek, incelemek ve analiz etmek için kullanılan bir Python kütüphanesidir.
+Matplotlib: Verileri grafik(çizgi veya sütun grafiği) şeklinde göstermek için kullanılan bir Python kütüphanesidir.
+Scikit-learn: Python'da ML modelleri oluşturmak ve kullanmak için kullanılan bir kütüphanedir.
+8. Mini Görev – İlk Model Araştırması
+Bu ödev için Scikit-learn kütüphanesinden Lineer Regresyon (doğrusal ilişki kurma) modelini seçtim. Bu model girdi olarak evin metrekaresini ve oda sayısını (feature) alır. Çıktı olarak ise bu özelliklere sahip bir evin tahmini satış fiyatını (label) sayısal bir değer olarak hesaplar. Geçmişteki ev satış verileriyle eğitilen bu model, yeni ve daha önce hiç görmediği bir evin özelliklerini aldığında mantıklı bir fiyat tahmini üretir. Böylece bilgisayar, geçmişteki sayısal veriler arasındaki ilişkiyi çözerek geleceğe yönelik tahmin yapmayı öğrenmiş olur.
