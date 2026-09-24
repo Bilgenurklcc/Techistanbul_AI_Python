@@ -38,7 +38,7 @@ TP True Positive: Mail gerçekten spamdi, model je doğru bilip spam dedi.
 TN True Negative: Mail normaldi, model de normal dedi.
 FP False Positive: Normal maili yanlışlıkla spam sandı Type 1 hatası.
 FN False Negative: Spam maili kaçırdı, normal mail sandı Type 2 hatası.
-8. Mini ML Senaryosu – Ev Fiyatı Tahmini 🟡
+8. Mini ML Senaryosu – Ev Fiyatı Tahmini
 Problem Tipi: Regresyon Sayısal değer tahmini
 Bir evin özelliklerine bakarak piyasa değerini fiyatını tahmin eden bir sistem kurmak istiyorum.
 Kullandığım Özellikler Features: Metrekare büyüklüğü, oda sayısı, binanın yaşı, kaçıncı katta olduğu ve hangi semtte bulunduğu.
