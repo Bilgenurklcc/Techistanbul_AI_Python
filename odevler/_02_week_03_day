@@ -1,0 +1,45 @@
+1. Makine Öğrenmesi Proje Yaşam Döngüsü
+Bir projeye başlarken kafamıza göre model kurup geçemiyoruz, belli bir sırayı takip etmek gerekiyor:
+Problem Tanımı: Önce biz burada tam olarak neyi çözmeye çalışıyoruz sorusunu netleştirmemiz lazım. Modelden beklentimiz ne, onu konuşuyoruz.
+Veri Toplama: Modelin ders çalışabilmesi için gereken ham verileri sağdan soldan, farklı kaynaklardan bir araya getiriyoruz.
+Veri Hazırlama: Ham veri genelde dağınık olur. Eksik satırlar, hatalı girdiler falan temizlenir; modelin anlayacağı kıvama getirilir.
+Model Seçimi: Elimizdeki veriye ve çözmek istediğimiz probleme en mantıklı gelen algoritmayı seçiyoruz.
+Eğitim: Hazırladığımız verileri modele verip bak, bu veriler arasındaki ilişkiler şunlar, bunları öğren diyerek modeli eğitiyoruz.
+Test / Değerlendirme: Model eğittikten sonra daha önce hiç görmediği sorularla verilerle onu sınıfa sokup ne kadar başarılı olduğuna bakıyoruz.
+Kullanım: Eğer model sınavdan geçer not alıverirse, artık gerçek hayattaki yeni verilerle tahmin yapmak için sahaya sürebiliriz.
+2. Dataset İnceleme (Titanic Örneği)
+Dataset: Titanic Dataset
+Kaynak: Kaggle
+Bu Titanic veri seti bu işlerin Hello World’ü gibi bir şey. Gemideki yolcuların bilgilerine bakıp kimin hayatta kalıp kimin kalamadığını anlamaya çalışıyoruz. İçinde yaklaşık 890 satır ve 12 sütun var. Yaşımız, cinsiyetimiz, bilet sınıfımız, ödediğimiz ücret gibi detaylar var. Buradaki hedefimiz yani label dediğimiz kısım yolcunun Survived hayatta kalıp kalmadığı sütunu.
+3. Train / Validation / Test Aşamaları
+Veriyi tek parça kullanmıyoruz, genelde üçe bölüyoruz:
+Train Eğitim Verisi: Modelin ders çalıştığı ana kaynak. İlişkileri, kuralları buradan ezberliyor.
+Validation Doğrulama Verisi: Model eğitilirken acaba şu ayarı yapsam daha mı iyi olur diye ara sınavlar yaptığımız veri grubu. Hangisinin daha iyi sonuç verdiğini burada test ediyoruz.
+Test Verisi: Model artık her şeyi öğrendikten sonra önüne koyduğumuz final sınavı. Süreçte hiç görmediği bu verilerle gerçek gücünü ölçüyoruz.
+4. Temel Algoritmalar
+Linear Regression: Düz, sürekli sayıları tahmin etmek için birebir. Mesela ev fiyatı, maaş veya aylık satış miktarı gibi.
+Logistic Regression: İki ihtimalli durumlar için kullanılır. Sınavı geçer mi kalır mı, ya da bu mail spam mi değil mi?
+Decision Tree: Adı üstünde karar ağacı. Veriyi şöyleyse buraya, böyleyse şuraya diye dallara ayırarak sınıflandırma yapıyor.
+Random Forest: Tek bir karar ağacı bazen yanılabilir. Orman kanunu gibi düşünülebilir; birden fazla ağacı birleştirip ortak kararla daha sağlam sonuçlar çıkarıyor.
+5. Overfitting / Underfitting Durumları
+Overfitting Ezbercilik: Model o kadar çok çalışıyor ki mantığı öğrenmek yerine veriyi birebir ezberliyor. Yeni bir soru geldiğinde çuvallıyor. Tıpkı öğrencinin çıkmış soruların sadece cevaplarını ezberleyip, biraz farklı bir soru gelince kalması gibi.
+Underfitting Yetersizlik: Model tembel kalıyor, verideki temel mantığı bile kavrayamıyor. Hiç ders çalışmadan sınava girip hem eski hem yeni sorularda çakılan öğrenciye benziyor.
+6. Başarı Metrikleri
+Modelin sınavdan kaç aldığını ölçerken sadece tek bir nota bakmamak lazımmış:
+Accuracy: Toplam tahminler içinde yüzde kaçını doğru bildik?
+Precision: Pozitif dediğimiz tahminlerin ne kadarı gerçekten pozitif çıktı?
+Recall: Gerçekte pozitif olan şeylerin ne kadarını kaçırmadan yakalayabildik?
+F1-Score: Precision ve Recallun ortak ortalaması, dengeleyici bir metrik.
+Küçük bir not: Mesela hastalık tespitinde sadece Accuracy değerine bakmak büyük yanılgı yaratabilir. Diyelim ki bin kişiden 995i sağlıklı. Model herkese sağlıklı dese Accuracy oranı uçar gider ama hastaları tamamen kaçırmış oluruz. İşte bu yüzden diğer metrikler de şart.
+7. Confusion Matrix
+Sınıflandırma modelinin nerede hata yapıp nerede doğru bildiğini tablo halinde gösteren bir matris. Spam mail örneği üzerinden şöyle özetleyebiliriz:
+TP True Positive: Mail gerçekten spamdi, model je doğru bilip spam dedi.
+TN True Negative: Mail normaldi, model de normal dedi.
+FP False Positive: Normal maili yanlışlıkla spam sandı Type 1 hatası.
+FN False Negative: Spam maili kaçırdı, normal mail sandı Type 2 hatası.
+8. Mini ML Senaryosu – Ev Fiyatı Tahmini 🟡
+Problem Tipi: Regresyon Sayısal değer tahmini
+Bir evin özelliklerine bakarak piyasa değerini fiyatını tahmin eden bir sistem kurmak istiyorum.
+Kullandığım Özellikler Features: Metrekare büyüklüğü, oda sayısı, binanın yaşı, kaçıncı katta olduğu ve hangi semtte bulunduğu.
+Hedef Label: Evin satış fiyatı.
+Bu proje için en temel ve mantıklı başlangıç algoritması Linear Regression olacaktır. Çünkü elimizde sürekli artan azalan sayısal bir değer fiyat var.
