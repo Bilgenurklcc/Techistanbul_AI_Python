@@ -1,4 +1,5 @@
-1. Makine Öğrenmesi Proje Yaşam Döngüsü
+
+1.Makine Öğrenmesi Proje Yaşam Döngüsü
 Bir projeye başlarken kafamıza göre model kurup geçemiyoruz, belli bir sırayı takip etmek gerekiyor:
 Problem Tanımı: Önce biz burada tam olarak neyi çözmeye çalışıyoruz sorusunu netleştirmemiz lazım. Modelden beklentimiz ne, onu konuşuyoruz.
 Veri Toplama: Modelin ders çalışabilmesi için gereken ham verileri sağdan soldan, farklı kaynaklardan bir araya getiriyoruz.
@@ -43,3 +44,4 @@ Bir evin özelliklerine bakarak piyasa değerini fiyatını tahmin eden bir sist
 Kullandığım Özellikler Features: Metrekare büyüklüğü, oda sayısı, binanın yaşı, kaçıncı katta olduğu ve hangi semtte bulunduğu.
 Hedef Label: Evin satış fiyatı.
 Bu proje için en temel ve mantıklı başlangıç algoritması Linear Regression olacaktır. Çünkü elimizde sürekli artan azalan sayısal bir değer fiyat var.
+
